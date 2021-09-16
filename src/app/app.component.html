@@ -1,0 +1,156 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div [style.color]='gv' [style.fontWeight]="bd" style="text-align:center" [class]="multiClass">
+  <h1>
+    Welcome to {{ youknowmyname() }}!
+    <button class="btn" [class.active]="isActive">Check Bootstrap</button>
+    <button class="btn btn-danger" [class.active]="isActive" (click)="MyFun()" >Check Bootstrap</button>
+    <button class="btn btn-danger" [class.disabled]="isActive" (click)="MyFun()" >Check Bootstrap</button>
+    <input type="text" name="" [value]="texts">
+    <input bind-disabled="isHidden" type="text" [value]="video" (click)="GetColor($event)">
+    <input type="text" #todo name="todo" (click)="GetColor(todo.value)">
+    <input type="text" [(ngModel)]="text2" (click)="">
+    <app-registration></app-registration>
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>
+
+
+ -->
+
+
+
+<!-- <span style="font-size:30px;cursor:pointer;margin-left: 250px;" (click)="openNav()">&#9776;</span> -->
+
+
+<!-- <div class="form-check form-switch" style="margin-left: 256px;" (click)="MyFun()">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" style="background-color: gainsboro;">
+  <label class="form-check-label" for="flexSwitchCheckDefault" (click)="MyFun()">{{texts}}</label>
+</div>
+<div class="tab" style="margin-left: 250px;">
+  <button class="tablinks" onclick="openCity(event, 'London')">MANUAL TEST</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">AUTOMATION</button>
+
+ <select [(ngModel)]="category" id="category">
+    <option value="" disabled selected>select a category</option>
+    <option *ngFor="let item of category" [value]="item">{{item}}</option>
+  </select>
+   <div *ngFor=" let item of category ">
+    {{item}}
+  </div>
+</div> -->
+ <div class="tab form-group" >
+
+  <button class="tablinks" [(ngModel)]="video">{{video}}</button>
+</div> 
+
+
+<!-- <div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div> -->
+<div class="container login-container" id="login" *ngIf=" loginUser ===''; else loggedIn">
+  <div class="row">
+      <div class="col-md-6 login-form-1">
+          <h3>Login for Form 1</h3>
+          <form>
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Your UserId *" #usedID name="usedID" [(ngModel)]="UserId" [value]="UserId" />
+              </div>
+              <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Your Password *" #Pwd name="Pwd" [(ngModel)]="pwd"  [value]="pwd" />
+              </div>
+              <div class="form-group">
+                  <input type="submit" class="btnSubmit" value="Login"  (click)="login()"/>
+                  <small id="emailHelp" class="form-text text-muted">{{item.WorkedBy}} contributed {{item.ContributionPer}}%.</small>
+              </div>
+              <div class="form-group">
+                  <a href="#" class="ForgetPwd">Forget Password?</a>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+
+<!-- <div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div> -->
+<ng-template #loggedIn>
+<div style="width: fit-content;" id="workbook">
+  <div *ngIf=" texts ==='QA'; else elsepart ">
+  <div class="d-flex flex-row" *ngIf=" isStory ===false">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Story No.</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" [value]="storyno" placeholder="SC-0000">
+    </div>
+    <div class="form-group" >
+      <label for="exampleInputEmail1">Story Description</label>
+      <input type="text" class="form-control"  id="exampleInputPassword1" [(ngModel)]="storyDescription" [value]="storyDescription" #txtDesc name="txtDesc" (keyup)="fillDesc(txtDesc.value)" placeholder="Story Description">
+    </div>
+  </div>
+  <div class="form-group" >
+   <label for="exampleInputEmail1">Start Date</label>
+   <ejs-datepicker id='datepicker' placeholder='Select a date'  [(ngModel)]="RstartDate" [value]='RstartDate' [min]='minDate' [max]='maxDate'></ejs-datepicker>
+ </div>
+ <div class="form-group">
+   <label for="exampleInputPassword1">End Date</label>
+   <ejs-datepicker id='datepicker' placeholder='Select a date' [(ngModel)]="RendDate" [value]='RendDate' [min]='minDate' [max]='maxDate'></ejs-datepicker>
+ </div>
+ <div class="form-group">
+  <label for="exampleInputPassword1">Total Hours worked</label>
+  <input type="text" class="form-control" id="exampleInputPassword1" [value]='RTHW' placeholder="Total Hours">
+</div>
+<div class="form-group">
+  <label for="exampleInputPassword1">Contribution Percentage</label>
+  <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="CP" [value]='CP' #conPer name="conPer" (keyup)="claculatePer(conPer.value)" placeholder="Percentage">
+  <div *ngFor=" let item of employeeWorked ">
+    <small id="emailHelp" class="form-text text-muted">{{item.WorkedBy}} contributed {{item.ContributionPer}}%.</small>
+  </div>
+</div>
+<div class="form-group">
+  <label for="Remark">Remarks</label>
+  <input type="text" class="form-control" id="Remark" [value]='Remarks' placeholder="Remark">
+</div>
+</div>
+
+
+<ng-template #elsepart>
+  <div class="text-center" id="story">
+   <div class="form-group d-flex justify-content-center">
+     <label for="storyno">Story No.</label>
+     <input type="text" class="form-control d-flex justify-content-center" name="storyno1" [(ngModel)]="storyno"  placeholder="SC-0000">
+   </div>
+  </div>
+ </ng-template>
+ <!-- <div class="form-group form-check">
+   <input type="checkbox" class="form-check-input" id="exampleCheck1">
+   <label class="form-check-label" for="exampleCheck1">Check me out</label>
+ </div> -->
+ 
+ <button type="Proceed" class="btn btn-primary" (click)="MyFun(storyno)">Proceed11</button>
+  <!-- <div id="mySidenav" class="sidenav" style="width:250px" (click)="SetAddStory()"> -->
+    <!-- <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a> -->
+   <!-- <a href="#" (click)="MyFun('dev')">Dev Member</a>
+   <a href="#" (click)="MyFun('QA')">QA Member</a>
+
+ </div> -->
+ </div>
+</ng-template>
+
